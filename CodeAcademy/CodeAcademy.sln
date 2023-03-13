@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{6AD10FE7-70E9-4F75-910F-C3387A48654F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{17C2DDB2-0831-4291-A610-5AB49C398002}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{2D94B4C6-40E8-4B80-97C6-FDA4DC469639}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog", "Services\Catalog\Catalog\Catalog.csproj", "{D068DA00-9382-4F2A-89C2-30E527F751CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CB0C3DF6-C552-4BF1-B90D-4A3BAD248D6E}"
+	ProjectSection(SolutionItems) = preProject
+		Ports.txt = Ports.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D068DA00-9382-4F2A-89C2-30E527F751CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D068DA00-9382-4F2A-89C2-30E527F751CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D068DA00-9382-4F2A-89C2-30E527F751CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D068DA00-9382-4F2A-89C2-30E527F751CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2D94B4C6-40E8-4B80-97C6-FDA4DC469639} = {17C2DDB2-0831-4291-A610-5AB49C398002}
+		{D068DA00-9382-4F2A-89C2-30E527F751CC} = {2D94B4C6-40E8-4B80-97C6-FDA4DC469639}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7314AAA1-CD03-4BF1-A9C8-D7DC1FE92DD0}
+	EndGlobalSection
+EndGlobal
