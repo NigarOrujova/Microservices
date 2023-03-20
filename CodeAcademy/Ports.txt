@@ -1,3 +1,0 @@
-Catalog
-   Catalog -> http://localhost:5011
-   Catalog -> http://localhost:5011/swagger/index.html

@@ -1,7 +1,9 @@
-﻿namespace Catalog.Models;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
-public class Category
-{
+namespace CodeAcademy.Catalog.Models;
+
+public class Artist {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
     public string Id { get; set; } = null!;

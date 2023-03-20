@@ -1,0 +1,10 @@
+﻿global using AutoMapper;
+global using CodeAcademy.Catalog.Dtos;
+global using CodeAcademy.Catalog.Models;
+global using CodeAcademy.Catalog.Services;
+global using CodeAcademy.Catalog.Settings;
+global using CodeAcademy.Shared.Results;
+global using Microsoft.Extensions.Options;
+global using MongoDB.Bson;
+global using MongoDB.Bson.Serialization.Attributes;
+global using MongoDB.Driver;
