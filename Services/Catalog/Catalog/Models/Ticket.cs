@@ -6,7 +6,6 @@ public class Ticket {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
     public string Id { get; set; } = null!;
-    public string Name { get; set; } = null!;
     public string? Description { get; set; }
 
     [BsonRepresentation(BsonType.Decimal128)]
@@ -25,8 +24,8 @@ public class Ticket {
     public string? UserId { get; set; }
 
     [BsonRepresentation(BsonType.ObjectId)]
-    public string ArtistId { get; set; } = null!;
+    public string ConcertId { get; set; }
 
     [BsonIgnore] // db icerisinde yer almayacak
-    public Artist Artist { get; set; } = null!;
+    public Concert Concert { get; set; } 
 }

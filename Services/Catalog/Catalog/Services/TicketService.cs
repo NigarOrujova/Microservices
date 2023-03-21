@@ -3,7 +3,7 @@
 public class TicketService : ITicketService
 {
     private readonly IMongoCollection<Ticket> _ticketCollection;
-    private readonly IMongoCollection<Artist> _artistCollection;
+    private readonly IMongoCollection<Concert> _concertCollection;
     private readonly IMapper _mapper;
 
     public TicketService(IMapper mapper, IDatabaseSettings databaseSettings)
@@ -13,7 +13,7 @@ public class TicketService : ITicketService
         var database = client.GetDatabase(databaseSettings.DatabaseName);
 
         this._ticketCollection = database.GetCollection<Ticket>(databaseSettings.TicketCollectionName);
-        this._artistCollection = database.GetCollection<Artist>(databaseSettings.ArtistCollectionName);
+        this._concertCollection = database.GetCollection<Concert>(databaseSettings.ConcertCollectionName);
         this._mapper = mapper;
     }
 
@@ -25,7 +25,7 @@ public class TicketService : ITicketService
         {
             foreach (var Ticket in Tickets)
             {
-                Ticket.Artist = await _artistCollection.Find<Artist>(x => x.Id == Ticket.ArtistId).FirstAsync();
+                Ticket.Concert = await _concertCollection.Find<Concert>(x => x.Id == Ticket.ConcertId).FirstAsync();
             }
         }
         else
@@ -44,7 +44,7 @@ public class TicketService : ITicketService
         {
             return Response<TicketDto>.Fail("Ticket not found", 404);
         }
-        Ticket.Artist = await _artistCollection.Find<Artist>(x => x.Id == Ticket.ArtistId).FirstAsync();
+        Ticket.Concert = await _concertCollection.Find<Concert>(x => x.Id == Ticket.ConcertId).FirstAsync();
 
         return Response<TicketDto>.Success(_mapper.Map<TicketDto>(Ticket), 200);
     }
@@ -57,7 +57,7 @@ public class TicketService : ITicketService
         {
             foreach (var Ticket in Tickets)
             {
-                Ticket.Artist = await _artistCollection.Find<Artist>(x => x.Id == Ticket.ArtistId).FirstAsync();
+                Ticket.Concert = await _concertCollection.Find<Concert>(x => x.Id == Ticket.ConcertId).FirstAsync();
             }
         }
         else

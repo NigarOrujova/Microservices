@@ -4,7 +4,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(Program));
-builder.Services.AddScoped<IArtistService, ArtistService>();
+builder.Services.AddScoped<IConcertService, ConcertService>();
 builder.Services.AddScoped<ITicketService, TicketService>();
 
 // Database Settings
