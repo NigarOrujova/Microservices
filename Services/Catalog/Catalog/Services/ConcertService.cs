@@ -1,6 +1,4 @@
-﻿using CodeAcademy.Catalog.Models;
-
-namespace CodeAcademy.Catalog.Services;
+﻿namespace CodeAcademy.Catalog.Services;
 public class ConcertService : IConcertService {
     private readonly IMapper _mapper;
     private readonly IMongoCollection<Concert> _concertCollection;

@@ -1,6 +1,4 @@
-﻿using CodeAcademy.Shared.Results;
-
-namespace CodeAcademy.Catalog.Services;
+﻿namespace CodeAcademy.Catalog.Services;
 
 public interface ITicketService {
     Task<Response<List<TicketDto>>> GetAllAsync();

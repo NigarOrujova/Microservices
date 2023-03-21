@@ -1,50 +1,47 @@
-﻿using System.Text.Json.Serialization;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Text.Json.Serialization;
 
-namespace CodeAcademy.Shared.Results;
+namespace CodeAcademy.Shared.Results
+{
+    public class Response<T>
+    {
+        public T Data { get; set; }
 
-public class Response<T> {
-    public T? Data { get; private set; }
+        [JsonIgnore]
+        public int StatusCode { get; set; }
 
-    [JsonIgnore]
-    public int StatusCode { get; private set; }
+        [JsonIgnore]
+        public bool IsSuccessful { get; set; }
 
-    [JsonIgnore]
-    public bool IsSuccessful { get; private set; }
+        public List<string> Errors { get; set; }
 
-    public ICollection<string>? Errors { get; private set; }
+        // Static Factory Method
+        public static Response<T> Success(T data, int statusCode)
+        {
+            return new Response<T> { Data = data, StatusCode = statusCode, IsSuccessful = true };
+        }
 
-    // Static Factory Method
-    public static Response<T> Success(T data, int statusCode)
-        => new Response<T> {
-            Data = data,
-            StatusCode = statusCode
-        };
+        public static Response<T> Success(int statusCode)
+        {
+            return new Response<T> { Data = default(T), StatusCode = statusCode, IsSuccessful = true };
+        }
 
-    /// <summary>
-    /// No Return Type Actions ( update, delete etc. )
-    /// </summary>
-    /// <param name="statusCode"></param>
-    /// <returns></returns>
-    public static Response<T> Success(int statusCode)
-        => new Response<T> {
-            Data = default(T),
-            StatusCode = statusCode,
-            IsSuccessful = true
-        };
+        public static Response<T> Fail(List<string> errors, int statusCode)
 
-    public static Response<T> Fail(string errors, int statusCode)
-         => new Response<T> {
-             Data = default(T),
-             StatusCode = statusCode,
-             IsSuccessful = false,
-             Errors = new List<string> { errors }
-         };
+        {
+            return new Response<T>
+            {
+                Errors = errors,
+                StatusCode = statusCode,
+                IsSuccessful = false
+            };
+        }
 
-    public static Response<T> Fail(List<string> errors, int statusCode)
-        => new Response<T> {
-            Data = default(T),
-            StatusCode = statusCode,
-            IsSuccessful = false,
-            Errors = errors
-        };
+        public static Response<T> Fail(string error, int statusCode)
+        {
+            return new Response<T> { Errors = new List<string>() { error }, StatusCode = statusCode, IsSuccessful = false };
+        }
+    }
 }

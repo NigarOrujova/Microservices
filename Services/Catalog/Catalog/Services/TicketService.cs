@@ -1,4 +1,6 @@
-﻿namespace CodeAcademy.Catalog.Services;
+﻿using CodeAcademy.Shared.Results;
+
+namespace CodeAcademy.Catalog.Services;
 
 public class TicketService : ITicketService
 {
