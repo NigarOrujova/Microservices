@@ -16,6 +16,7 @@ namespace IdentityServer
             new ApiResource("resource_catalog"){Scopes={"catalog_fullpermission"}},
             new ApiResource("resource_photo_stock"){Scopes={"photo_stock_fullpermission"}},
             new ApiResource("resource_basket"){Scopes={"basket_fullpermission"}},
+            new ApiResource("resource_discount"){Scopes={"discount_fullpermission"}},
             new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
         };
 
@@ -36,6 +37,7 @@ namespace IdentityServer
                 new ApiScope("catalog_fullpermission","Catalog API ucun full access"),
                 new ApiScope("photo_stock_fullpermission","Photo Stock API ucun full access"),
                 new ApiScope("basket_fullpermission","Basket API için full erişim"),
+                new ApiScope("discount_fullpermission","Discount API için full erişim"),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -58,7 +60,7 @@ namespace IdentityServer
                     AllowOfflineAccess = true,
                     ClientSecrets = {new Secret("secret".Sha256())},
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
-                    AllowedScopes = {"basket_fullpermission",IdentityServerConstants.StandardScopes.Email,
+                    AllowedScopes = {"basket_fullpermission","discount_fullpermission",IdentityServerConstants.StandardScopes.Email,
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.OfflineAccess,

@@ -3,4 +3,5 @@ Services :
 	               http://localhost:5011/swagger/index.html
 	PhotoStock Api -> http://localhost:5012
 	Basket Api -> http://localhost:5013
+	Discount Api -> http://localhost:5014
 IdentityServer http://localhost:5001
