@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	  <RootNamespace>CodeAcademy.Order.Infrastructure</RootNamespace>
+	  <RootNamespace>CodeAcademy.Services.Order.Infrastructure</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
