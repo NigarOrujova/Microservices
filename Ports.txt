@@ -5,4 +5,7 @@ Services :
 	Basket Api -> http://localhost:5013
 	Discount Api -> http://localhost:5014
 	Discount Api -> http://localhost:5015
+	FakePayment Api -> http://localhost:5016
 IdentityServer http://localhost:5001
+Gateway http://localhost:5000
+Web http://localhost:5010
