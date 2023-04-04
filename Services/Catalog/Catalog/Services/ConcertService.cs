@@ -19,7 +19,7 @@ public class ConcertService : IConcertService {
         return Response<List<ConcertDto>>.Success(_mapper.Map<List<ConcertDto>>(concerts), 200);
     }
 
-    public async Task<Response<ConcertDto>> CreateAsync(ConcertCreateDto concertDto) {
+    public async Task<Response<ConcertDto>> CreateAsync(ConcertDto concertDto) {
         var concert = _mapper.Map<Concert>(concertDto);
         await _concertCollection.InsertOneAsync(concert);
 

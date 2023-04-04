@@ -16,7 +16,7 @@ namespace CodeAcademy.Web.Validators
             RuleFor(x => x.Feature.Duration).InclusiveBetween(1, int.MaxValue).WithMessage("süre alanı boş olamaz");
 
             RuleFor(x => x.Price).NotEmpty().WithMessage("fiyat alanı boş olamaz").ScalePrecision(2, 6).WithMessage("hatalı para formatı");
-            RuleFor(x => x.CategoryId).NotEmpty().WithMessage("kategori alanı seçiniz");
+            RuleFor(x => x.ConcertId).NotEmpty().WithMessage("concert alanı seçiniz");
         }
     }
 }

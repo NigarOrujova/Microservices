@@ -26,7 +26,7 @@ public class ConcertsController : CustomBaseController {
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(ConcertCreateDto concertDto) {
+    public async Task<IActionResult> Create(ConcertDto concertDto) {
         var response = await _concertService.CreateAsync(concertDto);
 
         return CreateActionResultInstance(response);

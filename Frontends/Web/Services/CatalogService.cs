@@ -3,7 +3,6 @@ using CodeAcademy.Shared.Results;
 using CodeAcademy.Web.Helpers;
 using CodeAcademy.Web.Models;
 using CodeAcademy.Web.Models.Catalogs;
-using CodeAcademy.Web.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,17 +45,16 @@ namespace CodeAcademy.Web.Services
 
             return response.IsSuccessStatusCode;
         }
-
-        public async Task<List<CategoryViewModel>> GetAllCategoryAsync()
+        public async Task<List<ConcertViewModel>> GetAllConcertAsync()
         {
-            var response = await _client.GetAsync("categories");
+            var response = await _client.GetAsync("http://localhost:5014/api/Concerts");
 
             if (!response.IsSuccessStatusCode)
             {
                 return null;
             }
 
-            var responseSuccess = await response.Content.ReadFromJsonAsync<Response<List<CategoryViewModel>>>();
+            var responseSuccess = await response.Content.ReadFromJsonAsync<Response<List<ConcertViewModel>>>();
 
             return responseSuccess.Data;
         }

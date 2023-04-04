@@ -13,29 +13,17 @@ using CodeAcademy.Web.Validators;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.Configure<ServiceApiSettings>(builder.Configuration.GetSection("ServiceApiSettings"));
+builder.Services.Configure<ClientSettings>(builder.Configuration.GetSection("ClientSettings"));
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddAccessTokenManagement();
 builder.Services.AddSingleton<PhotoHelper>();
-builder.Services.AddScoped<ResourceOwnerPasswordTokenHandler>();
-
 builder.Services.AddScoped<ISharedIdentityService, SharedIdentityService>();
 
-
-
-
-
-
-builder.Services.Configure<ClientSettings>(builder.Configuration.GetSection(nameof(ClientSettings)));
-builder.Services.Configure<ServiceApiSettings>(builder.Configuration.GetSection(nameof(ServiceApiSettings)));
+builder.Services.AddScoped<ResourceOwnerPasswordTokenHandler>();
 builder.Services.AddScoped<ClientCredentialTokenHandler>();
 
 builder.Services.AddHttpClientServices(builder.Configuration);
-
-
-
-
-
-
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie
     (CookieAuthenticationDefaults.AuthenticationScheme, opts =>
@@ -45,6 +33,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         opts.SlidingExpiration = true;
         opts.Cookie.Name = "udemywebcookie";
     });
+
 builder.Services.AddControllersWithViews().AddFluentValidation(fv=>
 fv.RegisterValidatorsFromAssemblyContaining<TicketCreateInputValidator>());
 

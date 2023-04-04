@@ -30,8 +30,8 @@ namespace CodeAcademy.Web.Models.Catalogs
 
         public FeatureViewModel Feature { get; set; }
 
-        public string CategoryId { get; set; }
+        public string ConcertId { get; set; }
 
-        public CategoryViewModel Category { get; set; }
+        public ConcertViewModel Concert { get; set; }
     }
 }

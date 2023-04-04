@@ -26,7 +26,7 @@ namespace CodeAcademy.Web.Models.Catalogs
         public FeatureViewModel Feature { get; set; }
 
         [Display(Name = "Bilet kategori")]
-        public string CategoryId { get; set; }
+        public string ConcertId { get; set; }
 
         [Display(Name = "Bilet Resim")]
         public IFormFile PhotoFormFile { get; set; }

@@ -10,7 +10,7 @@ namespace CodeAcademy.Web.Services.Interfaces
     {
         Task<List<TicketViewModel>> GetAllTicketAsync();
 
-        Task<List<CategoryViewModel>> GetAllCategoryAsync();
+        Task<List<ConcertViewModel>> GetAllConcertAsync();
 
         Task<List<TicketViewModel>> GetAllTicketByUserIdAsync(string userId);
 

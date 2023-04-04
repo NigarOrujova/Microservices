@@ -8,7 +8,7 @@ namespace CodeAcademy.Web.Models.Catalogs
 {
     public class FeatureViewModel
     {
-        [Display(Name = "Kurs süre")]
+        [Display(Name = "Consert süre")]
         public int Duration { get; set; }
     }
 }

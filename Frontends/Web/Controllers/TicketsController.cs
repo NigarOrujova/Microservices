@@ -4,10 +4,6 @@ using CodeAcademy.Web.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CodeAcademy.Web.Controllers
 {
@@ -28,11 +24,11 @@ namespace CodeAcademy.Web.Controllers
             return View(await _catalogService.GetAllTicketByUserIdAsync(_sharedIdentityService.GetUserId));
         }
 
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> Create()        
         {
-            var categories = await _catalogService.GetAllCategoryAsync();
+            var concerts = await _catalogService.GetAllConcertAsync();
 
-            ViewBag.categoryList = new SelectList(categories, "Id", "Name");
+            ViewBag.concertList = new SelectList(concerts, "Id", "Artist");
 
             return View();
         }
@@ -40,8 +36,8 @@ namespace CodeAcademy.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(TicketCreateInput ticketCreateInput)
         {
-            var categories = await _catalogService.GetAllCategoryAsync();
-            ViewBag.categoryList = new SelectList(categories, "Id", "Name");
+            var concerts = await _catalogService.GetAllConcertAsync();
+            ViewBag.concertList = new SelectList(concerts, "Id", "Artist");
             if (!ModelState.IsValid)
             {
                 return View();
@@ -56,14 +52,14 @@ namespace CodeAcademy.Web.Controllers
         public async Task<IActionResult> Update(string id)
         {
             var ticket = await _catalogService.GetByTicketId(id);
-            var categories = await _catalogService.GetAllCategoryAsync();
+            var concerts = await _catalogService.GetAllConcertAsync();
 
             if (ticket == null)
             {
                 //mesaj göster
                 RedirectToAction(nameof(Index));
             }
-            ViewBag.categoryList = new SelectList(categories, "Id", "Name", ticket.Id);
+            ViewBag.concertList = new SelectList(concerts, "Id", "Artist", ticket.Id);
             TicketUpdateInput ticketUpdateInput = new()
             {
                 Id = ticket.Id,
@@ -71,7 +67,7 @@ namespace CodeAcademy.Web.Controllers
                 Description = ticket.Description,
                 Price = ticket.Price,
                 Feature = ticket.Feature,
-                CategoryId = ticket.CategoryId,
+                ConcertId = ticket.ConcertId,
                 UserId = ticket.UserId,
                 Picture = ticket.Picture
             };
@@ -82,8 +78,8 @@ namespace CodeAcademy.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Update(TicketUpdateInput ticketUpdateInput)
         {
-            var categories = await _catalogService.GetAllCategoryAsync();
-            ViewBag.categoryList = new SelectList(categories, "Id", "Name", ticketUpdateInput.Id);
+            var concerts = await _catalogService.GetAllConcertAsync();
+            ViewBag.concertList = new SelectList(concerts, "Id", "Artist", ticketUpdateInput.Id);
             if (!ModelState.IsValid)
             {
                 return View();
