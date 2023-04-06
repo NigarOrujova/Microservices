@@ -1,12 +1,810 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
     var count = 0;
+    Layout = null;
 }
 @model List<TicketViewModel>
-<h2>Biletler</h2>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Meta Data -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home — Milando - Music Portal HTML Templat</title>
+
+	<!-- Fav Icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="~/assets/img/fav-icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="~/assets/img/fav-icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="~/assets/img/fav-icons/favicon-16x16.png">
+	<meta name="theme-color" content="#e43a90">
+
+	<!-- Dependency Styles -->
+	<link rel="stylesheet" href="~/dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="~/dependencies/intro/css/stylesheet.css" type="text/css">
+	<link rel="stylesheet" href="~/dependencies/swiper/swiper.min.css" type="text/css">
+	<link rel="stylesheet" href="~/dependencies/font-awesome/css/font-awesome.min.css" type="text/css">
+	<link rel="stylesheet" href="~/dependencies/wow/css/animate.css" type="text/css">
+	<link rel="stylesheet" href="~/dependencies/magnific-popup/magnific-popup.css" type="text/css">
+	<link rel="stylesheet" href="~/dependencies/jquery-ui/css/jquery-ui.css" type="text/css">
+	<link rel="stylesheet" href="~/dependencies/slick-carousel/css/slick.css" type="text/css">
+	<link rel="stylesheet" href="~/dependencies/colornip/css/colornip.min.css" type="text/css">
+	<link rel="stylesheet" href="~/dependencies/css-loader/css/css-loader.css" type="text/css">
+
+	<!-- Site Stylesheet -->
+	<link rel="stylesheet" href="~/assets/css/woocommerce.css" type="text/css">
+	<link rel="stylesheet" href="~/assets/css/app.css" type="text/css">
+	<link id="theme" rel="stylesheet" href="~/assets/css/theme-color/theme-default.css" type="text/css">
+
+
+
+
+</head>
+
+<body id="home-version-1" class="home-version-1" data-style="default">
+
+	<div class="loader loader-bar-ping-pong is-active"></div>
+	<div id="site">
+
+		<header class="header header-magic-line">
+			<div class="header-inner">
+				<div class="tim-container clearfix">
+					<div class="header-magic-line-inner clearfix">
+						<div id="site-logo" class="float-left">
+							<a href="index.html" class="logo-main">
+								<img src="~/assets/img/logo_5.png" alt="logo">
+							</a>
+
+							<a href="index.html" class="logo-stickky">
+								<img src="~/assets/img/logo_5.png" alt="logo">
+							</a>
+						</div>
+
+						 @if (User.Identity.IsAuthenticated)
+                    {
+                        <ul class="navbar-nav user-login">
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    @User.Identity.Name
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" asp-controller="User" asp-action="Index">Profil</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Order" asp-action="CheckoutHistory">Ödeme geçmişim</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Basket" asp-action="Index">Sepet</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Auth" asp-action="LogOut">Çıkış</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    }
+
+                    else
+                    {
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="SignIn">Giriş yap</a>
+                    }
+
+						<div class="nav">
+							<ul class="group" id="header-menu-magic-line">
+								<li class="menu-item-has-children ">
+									<a href="index.html">Home </a>
+									<ul class="sub-menu">
+										<li><a href="index.html">Home Player V1</a></li>
+										<li><a href="index-two.html">Home Player V2</a></li>
+										<li><a href="index-three.html">Home Three</a></li>
+										<li><a href="index-four.html">Home Magazine</a></li>
+										<li><a href="index-five.html">Home Five</a></li>
+									</ul>
+								</li>
+								<li class="menu-item-has-children current_page_item">
+									<a href="artist.html">Aritist</a>
+									<ul class="sub-menu">
+										<li><a href="artist.html">Artist</a></li>
+										<li><a href="artist-single.html">Artist Details</a></li>
+									</ul>
+								</li>
+								<li class="menu-item-has-children">
+									<a href="album.html">Album</a>
+									<ul class="sub-menu">
+										<li><a href="album.html">Album</a></li>
+										<li><a href="album-single.html">Album Details</a></li>
+									</ul>
+								</li>
+								<li class="menu-item-has-children">
+									<a href="event.html">Events</a>
+									<ul class="sub-menu">
+										<li><a href="contact.html">Contact</a></li>
+									</ul>
+								</li>
+								<li class="menu-item-has-children">
+									<a href="tabs.html">Tabs</a>
+									<ul class="sub-menu">
+										<li><a href="tabs.html">Tabs</a></li>
+										<li><a href="tabs-single.html">Tabs Details</a></li>
+									</ul>
+								</li>
+								<li class="menu-item-has-children">
+									<a href="blog-list-right.html">Blog</a>
+									<ul class="sub-menu">
+										<li><a href="blog-list-right.html">Blog Standard</a></li>
+										<li><a href="blog-grid-right.html">Blog Grid</a></li>
+										<li><a href="blog-single.html">Blog Single</a></li>
+									</ul>
+								</li>
+								<li><a href="gallery.html">Gallery</a></li>
+								<li class="menu-item-has-children">
+									<a href="shop-right.html">Shop</a>
+									<ul class="sub-menu">
+										<li><a href="shop-right.html">Shop Right</a></li>
+										<li><a href="shop-left.html">Shop Left</a></li>
+										<li><a href="shop-single.html">Shop Details</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<!-- /.nav -->
+					</div>
+				</div>
+				<!-- /.tim-container -->
+			</div>
+			<!-- /.header-inner -->
+		</header>
+		<!-- /#header -->
+
+		<div class="offset-menu-two">
+			<a href="#" class="offset-closer"><img src="~/assets/img/offset-cross2.png" alt=""></a>
+
+			<div class="footer-about">
+				<p> There are many variations of passages of Lorem Ipsum available </p>
+
+				<div class="footer-contact">
+					<div class="contact-details clearfix">
+						<i class="fa fa-phone"></i>
+						<p>Call: +01 245 815 8246</p>
+					</div>
+
+					<div class="contact-details clearfix">
+						<i class="fa fa-envelope"></i>
+						<p> info@yourdomain.com </p>
+					</div>
+
+					<div class="contact-details clearfix">
+						<i class="fa fa-map-marker"></i>
+						<p> 22 No. Street New York, West beas park.New York, USA </p>
+					</div>
+				</div>
+				<!-- /.footer-address -->
+			</div>
+
+
+			<div class="offset-social-two">
+				<a href="">
+					<img src="~/assets/img/logo_5.png" alt="">
+				</a>
+				<ul>
+					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+				</ul>
+			</div>
+		</div>
+
+
+
+		<!--=============================-->
+		<!--=        Mobile Nav         =-->
+		<!--=============================-->
+		<header id="mobile-nav-wrap">
+			<div class="mob-header-inner d-flex justify-content-between">
+				<div id="mobile-logo" class="d-flex justify-content-start">
+					<a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/assets/img/logo.png" alt="Site Logo"></a>
+				</div>
+
+				<ul class="user-link nav justify-content-end">
+					<li><a href="#"><i class="fa fa-user"></i>Login</a></li>
+					<li><a href="#"><i class="fa fa-sign-in"></i>Sign Up</a></li>
+				</ul>
+
+				<div id="nav-toggle" class="nav-toggle hidden-md">
+					<div class="toggle-inner">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+			</div>
+			<!-- /.mob-header-inner -->
+		</header>
+		<!-- /#mobile-header -->
+
+		<div class="mobile-menu-inner">
+
+			<div class="mobile-nav-top-wrap">
+				<div class="mob-header-inner clearfix">
+					<div class="d-flex justify-content-start mobile-logo">
+						<a href="index.html">
+							<img src="~/assets/img/logo-dark.png" alt="Site Logo">
+						</a>
+					</div>
+
+					<div class="close-menu">
+						<span class="bar"></span>
+						<span class="bar"></span>
+					</div>
+				</div>
+				<!-- /.mob-header-inner -->
+
+				<div class="close-menu">
+					<span class="bar"></span>
+					<span class="bar"></span>
+				</div>
+			</div>
+			<!-- /.mobile-nav-top-wrap -->
+
+			<nav id="accordian">
+				<ul class="accordion-menu">
+					<li>
+						<a href="#0" class="dropdownlink">Home</a>
+						<ul class="submenuItems">
+							<li><a href="index.html">Home One</a></li>
+							<li><a href="index-two.html">Home Two</a></li>
+							<li><a href="index-three.html">Home Three</a></li>
+							<li><a href="index-four.html">Home Four</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#0" class="dropdownlink">Artist</a>
+						<ul class="submenuItems">
+							<li><a href="artist.html">Artist</a></li>
+							<li><a href="artist-single.html">Artist Details</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="album.html">Album</a>
+					</li>
+					<li>
+						<a href="#0" class="dropdownlink">Events</a>
+						<ul class="submenuItems">
+							<li><a href="event.html">Events</a></li>
+							<li><a href="contact.html">Contact Us</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="tabs.html">Tabs</a>
+
+					</li>
+					<li>
+						<a href="#0" class="dropdownlink">Blog</a>
+						<ul class="submenuItems">
+							<li><a href="blog-list-right.html">Blog Standard</a></li>
+							<li><a href="blog-grid-right.html">Blog Grid</a></li>
+							<li><a href="blog-single.html">Blog Single</a></li>
+						</ul>
+					</li>
+
+					<li>
+						<a href="gallery.html">Gallery</a>
+					</li>
+					<li>
+						<a href="#0" class="dropdownlink">Shop</a>
+						<ul class="submenuItems">
+							<li><a href="shop-right.html">Shop Right</a></li>
+							<li><a href="shop-left.html">Shop Left</a></li>
+							<li><a href="shop-single.html">Shop Details</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<!-- /.mobile-menu-inner -->
+		<!--============================-->
+		<!--=        	Banner         =-->
+		<!--============================-->
+		<section class="banner-five" data-bg-image="media/background/bg5.jpg">
+			<div class="tim-container">
+				<div id="para" class="paralax">
+					<div id="paralax-1" class="scene">
+						<div data-depth="-0.50"><img src="media/background/mouse-move.png" alt=""></div>
+					</div>
+				</div>
+				<div class="baneer-five-content">
+					<div class="content sp-container">
+						<div class="sp-content">
+							<div class="sp-globe"></div>
+							<h2 class="frame-1">New York</h2>
+							<h2 class="frame-2">TERRITORY</h2>
+							<h2 class="frame-3">The Bleze</h2>
+
+						</div>
+						<h3>DYNNEX HALL - March 17, 2018</h3>
+						<a class="tim-slide-btn" asp-action="Index" asp-controller="Tickets">TICKETS</a>
+					</div>
+				</div>
+				<!-- /.tim-container -->
+			</div>
+			<!-- /.tim-container -->
+
+			<div class="smoke-wrqpper">
+				<canvas id="canvas"></canvas>
+			</div>
+
+		</section>
+		<!-- /#page-header -->
+
+
+
+		<section class="header_player style-fullwidth">
+
+			<!-- Audio Player -->
+			<div class="player-container-fullwidth">
+
+				<!-- /.current-tracks -->
+				<div id="header_player" class="jp-audio" role="application" aria-label="media player">
+					<div class="jp-type-playlist clearfix">
+						<div class="jp-gui jp-interface">
+							<div class="jp-controls">
+								<button class="jp-play" tabindex="0"><i class="fa fa-play"></i></button>
+							</div>
+							<!-- Display the track inside player -->
+
+							<div class="current-tracks">
+								<div id="main_player" class="jp-jplayer">
+								</div>
+								<div id="nowPlaying">
+									<h3 class="track-name"></h3>
+									<span class="artist-name"></span>
+								</div>
+								<!-- #nowPlaying -->
+							</div>
+							<!-- /.current-tracks -->
+
+							<div class="jp-progress">
+								<div class="jp-seek-bar">
+									<div class="jp-play-bar"></div>
+								</div>
+							</div>
+
+							<div class="jp-duration" role="timer" aria-label="duration"></div>
+
+							<div class="vel-wrap">
+								<button class="jp-mute" tabindex="0"><i class="fa fa-volume-up"></i></button>
+
+								<div class="jp-volume-bar">
+									<div class="jp-volume-bar-value"></div>
+								</div>
+
+							</div>
+							<!-- /.vel-wrap -->
+
+							<button id="playlist-toggle" class=""><i class="fa fa-list"></i></button>
+
+							<!-- Playlist -->
+							<div class="jp-playlist">
+								<ul>
+									<li></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+
+
+		<!--==============================-->
+		<!--=        	Artist lineup         =-->
+		<!--==============================-->
+		<section class="section-padding-two artist-lineup">
+			<div class="tim-container clearfix">
+				<div class="row">
+					<div class="section-title style-four">
+						<h2>ARTIST LINEUP</h2>
+						<p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some injected humour.</p>
+					</div>
+				</div>
+				<div class="swiper-container row" data-swiper-config='{ "loop": true, "prevButton":".swiper-button-prev", "nextButton": ".swiper-button-next", "speed": 700, "autoplay": "5000", "slidesPerView": 6, "spaceBetween": 0, "grabCursor": true,"breakpoints": { "1300": { "slidesPerView": 4 }, "767": { "slidesPerView": 3 }, "500": { "slidesPerView": 1 }}}'>
+					<ul class="artist-line-wrapper swiper-wrapper">
+						<li class="artist-single clearfix swiper-slide">
+							<img src="~/assets/img/ab6761610000e5ebc5733401b4689b2064458e7d.jfif" alt="">
+							<div class="artist-single-content">
+								<ul>
+									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								</ul>
+								<h6>James Hetfield</h6>
+								<p>Band: Metallica</p>
+							</div>
+						</li>
+
+						<li class="artist-single clearfix swiper-slide">
+							<img src="~/assets/img/The_Neighbourhood_-_The_Neighbourhood.jpg" alt="">
+							<div class="artist-single-content">
+								<ul>
+									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								</ul>
+								<h6>James Hetfield</h6>
+								<p>Band: Metallica</p>
+							</div>
+						</li>
+
+						<li class="artist-single clearfix swiper-slide">
+							<img src="~/assets/img/Guns-N-Roses-Appetite-For-Destruction-Album-Cover-Web-Optimsied-820-820x820.jpg" alt="">
+							<div class="artist-single-content">
+								<ul>
+									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								</ul>
+								<h6>James Hetfield</h6>
+								<p>Band: Metallica</p>
+							</div>
+						</li>
+
+						<li class="artist-single clearfix swiper-slide">
+							<img src="~/assets/img/download (2).jfif" alt="">
+							<div class="artist-single-content">
+								<ul>
+									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								</ul>
+								<h6>James Hetfield</h6>
+								<p>Band: Metallica</p>
+							</div>
+						</li>
+						<li class="artist-single clearfix swiper-slide">
+							<img src="~/assets/img/1870364f.webp" alt="">
+							<div class="artist-single-content">
+								<ul>
+									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								</ul>
+								<h6>James Hetfield</h6>
+								<p>Band: Metallica</p>
+							</div>
+						</li>
+
+						<li class="artist-single clearfix swiper-slide">
+							<img src="~/assets/img/download (1).jfif" alt="">
+							<div class="artist-single-content">
+								<ul>
+									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								</ul>
+								<h6>James Hetfield</h6>
+								<p>Band: Metallica</p>
+							</div>
+						</li>
+
+						<li class="artist-single clearfix swiper-slide">
+							<img src="~/assets/img/368932-f4db618a208aae699e9d246ede1e42a7.webp" alt="">
+							<div class="artist-single-content">
+								<ul>
+									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								</ul>
+								<h6>James Hetfield</h6>
+								<p>Band: Metallica</p>
+							</div>
+						</li>
+
+						<li class="artist-single clearfix swiper-slide">
+							<img src="~/assets/img/ab6761610000e5ebc47d7909754b4c16982e5626.jfif" alt="">
+							<div class="artist-single-content">
+								<ul>
+									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								</ul>
+								<h6>James Hetfield</h6>
+								<p>Band: Metallica</p>
+							</div>
+						</li>
+					</ul>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
+			</div>
+			<!-- /.tim-container -->
+		</section>
+		<!-- /#about -->
+		<!--==============================-->
+		<!--=        	Latest release         =-->
+		<!--==============================-->
+		<!-- /#about -->
+		<!--==============================-->
+		<!--=        	Latest album         =-->
+		<!--==============================-->
+		<section class="three-d-album">
+			<div class="section-title style-four">
+				<h2>TRENDING ALBUMS</h2>
+				<p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some injected humour.</p>
+			</div>
+			<div class="more-album">
+
+
+				<a href="#">SEE ALL ALBUMS<i class="fa fa-play" aria-hidden="true"></i></a>
+
+			</div>
+			<div class="three-d-album-width">
+				<div class="row">
+
+					<div class="threed-container-wrapper">
+						<div class="threed-container-inner">
+							<div class="single-3d empty-space">
+							</div>
+							<div class="single-3d">
+								<a href="#"><img src="~/assets/img/1-28.jpeg" alt=""></a>
+							</div>
+							<div class="single-3d  empty-space">
+							</div>
+							<div class="single-3d">
+								<a href="#"><img src="~/assets/img/1870364f.webp" alt=""></a>
+							</div>
+							<div class="single-3d  empty-space">
+							</div>
+							<div class="single-3d">
+								<a href="#"><img src="~/assets/img/368932-f4db618a208aae699e9d246ede1e42a7.webp" alt=""></a>
+							</div>
+							<div class="single-3d">
+								<a href="#"><img src="~/assets/img/ab6761610000e5ebc5733401b4689b2064458e7d.jfif" alt=""></a>
+							</div>
+							<div class="single-3d">
+								<a href="#"><img src="~/assets/img/attachment-aerosmith-debut-album1.jpg" alt=""></a>
+							</div>
+							<div class="single-3d">
+								<a href="#"><img src="~/assets/img/cd81980cc17c75e4633658d98557da3c.jpg" alt=""></a>
+							</div>
+							<div class="single-3d">
+								<a href="#"><img src="~/assets/img/Guns-N-Roses-Appetite-For-Destruction-Album-Cover-Web-Optimsied-820-820x820.jpg" alt=""></a>
+							</div>
+
+							<div class="single-3d">
+								<a href="#"><img src="~/assets/img/gettyimages-78899635-2000.jpg" alt=""></a>
+							</div>
+							<div class="single-3d">
+								<a href="#"><img src="~/assets/img/pink-floyd-dark-side-i30715.jpg" alt=""></a>
+							</div>
+							<div class="single-3d">
+								<a href="#"><img src="~/assets/img/queen-bohemianrhapsody-2000x1270-1.jpg" alt=""></a>
+							</div>
+							<div class="single-3d  empty-space">
+							</div>
+							<div class="single-3d">
+								<a href="#"><img src="~/assets/img/The-Weeknd-Tour-Performance-LA-GettyImages-1447433147-H-2023.webp" alt=""></a>
+							</div>
+							<div class="single-3d  empty-space">
+							</div>
+							<div class="single-3d">
+								<a href="#"><img src="~/assets/img/queen-bohemianrhapsody-2000x1270-1.jpg" alt=""></a>
+							</div>
+
+							<div class="single-3d  empty-space">
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- /.tim-container -->
+		</section>
+
 <hr />
 
-@if (Model.Any())
+
+
+
+		<section class="section-padding show-archive">
+			<div class="container">
+				<div class="d-flex justify-content-center row">
+					<div class="col-xl-10">
+						<div class="section-title style-four">
+							<h2>UPCOMING SHOWS</h2>
+						</div>
+						@if (Model.Any()){
+							@foreach (var item in Model)
+							{
+								<div class="single-show-ticket row no-guters">
+									<div class="col-sm-3 col-md-3 col-lg-3">
+										<div class="date-time">
+											<h6>@item.CreatedTime.ToString("dd")</h6>
+											<p>@item.CreatedTime.ToString("MMMM, yyyy")</p>
+										</div>
+
+									</div>
+									<div class="col-sm-3 col-md-3 col-lg-3">
+										<img src="@item.StockPictureUrl" alt="...">
+									</div>
+									<div class="col-sm-3 col-md-3 col-lg-4">
+										<h5>@item.Name - @item.Concert.Artist</h5>
+										<p>@item.Concert.Location</p>
+									</div>
+									<div class="col-sm-3 col-md-3 col-lg-2">
+										<div class="a_hover">
+											<a asp-controller="Home" asp-action="Detail" asp-route-id="@item.Id">TICKETS</a>
+											<img class="svg" src="media/background/round_black.svg" alt="">
+											<img class="svg" src="media/background/round.svg" alt="">
+											<i class="fa fa-play" aria-hidden="true"></i>
+
+										</div>
+									</div>
+								</div>
+							}
+						}
+					</div>
+				</div>
+				<!-- /.latest-album-info -->
+			</div>
+			<!-- /.row -->
+		</section>
+
+
+		<footer id="footer-3">
+			<div class="container">
+				<div class="d-flex justify-content-center row">
+					<div class="col-xl-10">
+						<div class="footer-feed">
+							<div class="section-title style-four">
+								<h2>FROM THE FEED</h2>
+							</div>
+							<ul>
+								
+								<li>
+									<a href="#">
+										<img src="~/assets/img/368932-f4db618a208aae699e9d246ede1e42a7.webp" alt="">
+							</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="~/assets/img/download (1).jfif" alt="">
+							</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="~/assets/img/ab6761610000e5ebc5733401b4689b2064458e7d.jfif" alt="">
+							</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="~/assets/img/Nirvana_album_cover.svg.png" alt="">
+							</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="~/assets/img/ab6761610000e5ebc47d7909754b4c16982e5626.jfif" alt="">
+							</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="~/assets/img/artworks-000173121365-qkfdxj-t500x500.jpg" alt="">
+							</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="~/assets/img/ab6761610000e5ebc5733401b4689b2064458e7d.jfif" alt="">
+							</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="~/assets/img/huge_avatar.jfif" alt="">
+							</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer-three-bottom">
+							<div class="footer-three-left">
+								<a href="#">
+							<img src="~/assets/img/logo_5_dark.png" alt="">
+						</a>
+								<p>There are many variations of passages of Lorem Ipsum available but the majority. We are proud there are many variations of passages of Lorem Ipsum available but the majority of the users does use this.</p>
+							</div>
+							<div class="footer-three-right">
+								<ul class="footer-three-menu">
+									<li><a href="#">Rules</a></li>
+									<li><a href="#">Terms of use</a></li>
+									<li><a href="#">Tickets</a></li>
+									<li><a href="#">policy</a></li>
+								</ul>
+								<div class="footer-social-three">
+									<ul>
+										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+										<li><a href="#"><i class="fa fa-cloud"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+										<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+										<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+										<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+										<li><a href="#"><i class="fa fa-vine"></i></a></li>
+										<li><a href="#"><i class="fa fa-apple"></i></a></li>
+										<li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<!-- /.col-xl- -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container -->
+		</footer>
+		<!-- /#footer -->
+
+		<div class="backtotop">
+			<i class="fa fa-angle-up backtotop_btn"></i>
+		</div>
+
+
+	</div>
+	<!-- /#site -->
+	<!-- Dependency Scripts -->
+	<script src="~/dependencies/jquery/jquery.min.js"></script>
+	<script src="~/dependencies/jquery-ui/jquery-ui.min.js"></script>
+	<script src="~/dependencies/bootstrap/js/bootstrap.min.js"></script>
+	<script src="~/dependencies/swiper/js/swiper.min.js"></script>
+	<script src="~/dependencies/swiperRunner/swiperRunner.min.js"></script>
+	<script src="~/dependencies/wow/js/wow.min.js"></script>
+	<script src="~/dependencies/jquery.countdown/jquery.countdown.min.js"></script>
+	<script src="~/dependencies/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+	<script src="~/dependencies/jquery.spinner/js/jquery.spinner.js"></script>
+	<script src="~/dependencies/isotope-layout/isotope.pkgd.min.js"></script>
+	<script src="~/dependencies/masonry-layout/masonry.pkgd.min.js"></script>
+	<script src="~/dependencies/imagesloaded/imagesloaded.pkgd.min.js"></script>
+	<script src="~/dependencies/slick-carousel/js/slick.min.js"></script>
+	<script src="~/assets/js/headroom.js"></script>
+	<script src="~/assets/js/soundmanager2.js"></script>
+	<script src="~/assets/js/mp3-player-button.js"></script>
+	<script src="~/assets/js/smoke.js"></script>
+	<script src="~/dependencies/FitText.js/js/jquery.fittext.js"></script>
+	<script src="~/dependencies/gmap3/js/gmap3.min.js"></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js'></script>
+	<script src='dependencies/tilt.js/js/tilt.jquery.js'></script>
+	<script src='assets/js/parallax.min.js'></script>
+	<!-- Player -->
+	<script src="~/dependencies/jPlayer/js/jquery.jplayer.min.js"></script>
+	<script src="~/dependencies/jPlayer/js/jplayer.playlist.min.js"></script>
+	<script src="~/assets/js/myplaylist.js"></script>
+
+	<!-- Remove It -->
+	<script src="~/dependencies/colornip/colornip.min.js"></script>
+
+	<!--Google map api -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsBrMPsyNtpwKXPPpG54XwJXnyobfMAIc"></script>
+
+	<!-- Site Scripts -->
+	<script src="~/assets/js/app.js"></script>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@if (Model.Any())
 
 {
 
@@ -39,4 +837,4 @@
         }
 
     }
-}
+}*@

@@ -1,0 +1,828 @@
+/* Base
+   @mixin =================================== */
+ul.products li.product .woocommerce-loop-product__title a:hover {
+  color: #135ee4;
+}
+
+.section-title h2:before, .section-title h2:after {
+  background: #135ee4;
+}
+
+.section-title h2 span {
+  color: #135ee4;
+}
+
+/* Button */
+.tim-btn.tim-btn-bgt:hover {
+  color: #135ee4;
+}
+
+.video-btn-two i {
+  color: #135ee4;
+}
+
+.video-btn-two:hover {
+  background: #135ee4;
+  border-color: #135ee4;
+  color: #fff;
+}
+
+.store-btn:hover {
+  background: #135ee4;
+  border-color: #135ee4;
+}
+
+/* Header
+   @mixin =================================== */
+.header .top-header {
+  background: rgba(19, 94, 228, 0.65);
+}
+
+.header.header-two .top-header .skew-bg {
+  background: #135ee4;
+}
+
+.header.header-two .top-header .skew-bg:before {
+  border-color: transparent transparent transparent #135ee4;
+}
+
+.header.header-two .top-header .user-login > li:after {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.header.header-two .top-header .user-login li > a {
+  color: #363636;
+}
+
+.header.header-two .top-header .user-login li > a i {
+  color: #363636;
+}
+
+.header.header-two .top-header .user-login li > a:hover {
+  color: #135ee4;
+}
+
+.header.header-two .header-inner {
+  background: rgba(19, 94, 228, 0.2);
+}
+
+.headroom--pinned.hide-topbar .header-inner #main-header-menu li a:hover, .headroom--pinned.hide-topbar .header-inner #main-header-menu li.active > a {
+  color: #135ee4;
+}
+
+/* Top Header Right With Mini Cart */
+.user-login {
+  list-style: none;
+}
+
+.user-login li.cart-count .cart-overview .cart-item .product-thumbnail img {
+  max-width: 100%;
+}
+
+.user-login li.cart-count .cart-overview .cart-item .product-details .product-title:hover {
+  color: #135ee4;
+}
+
+.user-login li.cart-count .view-cart:hover {
+  background: #135ee4;
+  border-color: #135ee4;
+}
+
+.user-login li.cart-count .checkout:hover {
+  background: #0f4bb5;
+}
+
+.header-inner {
+  background: rgba(19, 94, 228, 0.5);
+}
+
+.headroom--pinned.hide-topbar .header-inner #main-header-menu li a:hover {
+  color: #135ee4;
+}
+
+.headroom--pinned.hide-topbar .header-inner .nav .head-btn:hover {
+  border-color: #135ee4;
+}
+
+#site-logo {
+  padding: 21px 0;
+}
+
+#main-header-menu {
+  list-style: none;
+}
+
+#main-header-menu > li.menu-item-has-children .sub-menu {
+  border-color: #135ee4;
+}
+
+#main-header-menu > li.menu-item-has-children .sub-menu li a:hover, #main-header-menu > li.menu-item-has-children .sub-menu li a.current_page {
+  color: #135ee4;
+}
+
+.header-inner .nav .head-btn:hover {
+  background: #135ee4;
+  border-color: #135ee4;
+}
+
+.headroom--pinned.hide-topbar .header-inner #main-header-menu li::after,
+.headroom--pinned.hide-topbar .header-inner #main-header-menu li::before {
+  background: #135ee4;
+}
+
+/* Mobile Nav */
+#nav-toggle .toggle-inner > span:nth-child(2), #nav-toggle .toggle-inner > span:nth-child(3) {
+  width: 24px;
+  margin-left: 6px;
+  background-color: #135ee4 !important;
+}
+
+.accordion-menu ul {
+  list-style: none;
+}
+
+.accordion-menu .accordion-menu li.open .dropdownlink {
+  color: #135ee4;
+}
+
+.accordion-menu .dropdownlink {
+  cursor: pointer;
+  color: #fff;
+  position: relative;
+  -webkit-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.accordion-menu .dropdownlink i {
+  position: absolute;
+  top: 13px;
+  left: 16px;
+  font-size: 14px;
+}
+
+.accordion-menu .dropdownlink .fa-angle-down {
+  right: 12px;
+  left: auto;
+}
+
+.accordion-menu .dropdownlink:last-child {
+  border-bottom: none;
+}
+
+.accordion-menu .submenuItems:hover, .accordion-menu .submenuItems:focus {
+  color: #135ee4;
+}
+
+.headroom--pinned.hide-topbar .header-inner {
+  background: #FFF;
+}
+
+/* Banner
+   @mixin =================================== */
+.tim-slide-btn:hover {
+  background: rgba(19, 94, 228, 0.73);
+}
+
+.banner-slider-two .swiper-slide .slider-content-two.content-three h3 {
+  color: #135ee4;
+}
+
+.banner-slider-two .swiper-slide .slider-content-two .tim-btn:hover {
+  background: #135ee4;
+  border-color: #135ee4;
+}
+
+.header_player .jp-audio .jp-type-playlist .jp-interface .jp-controls .jp-play i {
+  color: #135ee4;
+}
+
+.header_player .jp-audio .jp-volume-bar .jp-volume-bar-value {
+  background: #135ee4;
+}
+
+.header_player .jp-audio .jp-type-playlist .jp-interface .jp-progress .jp-seek-bar .jp-play-bar {
+  background: #135ee4;
+}
+
+/* Tranding Album
+   @mixin =================================== */
+.album-box .album-details .icon i {
+  color: #135ee4;
+}
+
+.album-box .album-details .content .album-name:before, .album-box .album-details .content .album-name:after {
+  background: #135ee4;
+}
+
+.album-box:hover .album-details {
+  background: rgba(19, 94, 228, 0.8);
+}
+
+.album-box.album-box-two .album-details .content h3 a:hover {
+  color: #135ee4;
+}
+
+.album-box.album-box-two:hover .content .album-name:before, .album-box.album-box-two:hover .content .album-name:after {
+  background: #135ee4 !important;
+}
+
+/* Event About
+   @mixin =================================== */
+.event-content h2 span {
+  color: #135ee4;
+}
+
+.event-content .tim-btn:hover {
+  background: #135ee4;
+  border-color: #135ee4;
+}
+
+.exclusive-album-items .album-item .album-image .exse-album-name .icon {
+  background: #135ee4;
+}
+
+/* Event Schedule
+   @mixin =================================== */
+.schedule .schedule-item .band-name {
+  color: #135ee4;
+}
+
+.schedule .schedule-item .band-name:before {
+  background: #135ee4;
+}
+
+/* Recent Performance
+   @mixin =================================== */
+.performace:before {
+  background: rgba(19, 94, 228, 0.5);
+}
+
+.performace:hover .content h3, .performace:hover .content h5 {
+  color: #135ee4;
+}
+
+/* Pricing
+   @mixin =================================== */
+.pricing-table .price {
+  color: #135ee4;
+}
+
+.pricing-table .tim-btn:hover {
+  background: #135ee4;
+  border-color: #135ee4;
+}
+
+.pricing-table:hover .pricbg path {
+  fill: #135ee4;
+}
+
+/* Tabs
+   @mixin =================================== */
+.tabs-filter-button li a:hover {
+  color: #135ee4;
+}
+
+.tabs-filter-button li.current a {
+  color: #135ee4;
+}
+
+.songs-details li a:hover {
+  color: #135ee4;
+}
+
+.songs-details li a span {
+  color: #135ee4;
+}
+
+.songs-details li span {
+  color: #135ee4;
+}
+
+/* Album
+	@mixin =================================== */
+.album-filter-button li:hover, .album-filter-button li.current {
+  background: #135ee4;
+  border-color: #135ee4;
+}
+
+.album-filter-button li:hover a, .album-filter-button li.current a {
+  color: #fff;
+}
+
+.album-filter-button.album-filter-button-two li:hover, .album-filter-button.album-filter-button-two li.current {
+  border-color: #135ee4;
+  border: 1px dashed #135ee4;
+}
+
+.album-filter-button.album-filter-button-two li:hover a, .album-filter-button.album-filter-button-two li.current a {
+  color: #135ee4;
+}
+
+.tim-isotope.tim-isotope-1 .tim-album-item .album_details_wrap .tim-btn:hover {
+  background: #135ee4;
+  border-color: #135ee4;
+}
+
+.tim-isotope.tim-isotope-2 .tim-album-item:before {
+  background: rgba(19, 94, 228, 0.58);
+}
+
+/* Exclusive Album */
+.exclusive-album-items {
+  padding: 0 5px;
+}
+
+.exclusive-album-items .album-item:before {
+  background: rgba(19, 94, 228, 0.5);
+}
+
+.exclusive-album-items .album-item .album-image img {
+  max-width: 100%;
+}
+
+.exclusive-album-items .album-item .album-image .exse-album-name h4 {
+  background: #135ee4;
+}
+
+.exclusive-album-items .album-item .content .icon a:hover {
+  color: #135ee4;
+}
+
+/* Feature Album
+   @mixin =================================== */
+.feature-albums .tim-album-item .album_details_wrap .tim-btn:hover {
+  color: #fff;
+  background: #135ee4;
+  border-color: #135ee4;
+}
+
+/* About
+	@mixin =================================== */
+.artist-music-inner .aritist-music .icon i {
+  color: #135ee4;
+}
+
+.album-cover-img img {
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+
+.artist-social-link li a:hover {
+  border-color: #135ee4;
+  color: #135ee4;
+}
+
+/* Music Playlist One */
+.hit-plalist li .video-song:hover, .hit-plalist li .song-download:hover {
+  color: #135ee4;
+}
+
+.hit-plalist li.active {
+  background: #135ee4;
+}
+
+.hit-plalist li.active .video-song:hover, .hit-plalist li.active .song-download:hover {
+  color: #072457;
+}
+
+.album-feature .artist-music-inner {
+  background: rgba(19, 94, 228, 0.8);
+}
+
+/* Newsletter
+	@mixin =================================== */
+.newsletter-inner .newsletter-form .tim-btn:hover {
+  background: #1154cc;
+}
+
+/* Newsletter Two */
+.newsletter-wrap-two:before {
+  background: rgba(19, 94, 228, 0.5);
+}
+
+/* Sale Album
+	@mixin =================================== */
+.slider-content ul li:before {
+  color: #135ee4;
+}
+
+.sale-tabs li a.active:after {
+  background: #135ee4;
+}
+
+/* Upcomiong Concerts
+	@mixin =================================== */
+.concerts .countdown {
+  background: #135ee4;
+}
+
+.concerts .ticket .tic-btn {
+  color: #135ee4;
+}
+
+.concerts .ticket .tic-btn.tic-btn-bg {
+  background: #135ee4;
+}
+
+.concerts .concert-details h3 {
+  color: #135ee4;
+}
+
+/* Upcomming Concert Three */
+.upc-con-three .content-wrap .content h3 {
+  color: #135ee4;
+}
+
+.upc-con-three .upc-count-wrap .tic-btn:hover {
+  background: #135ee4;
+  color: #fff;
+  border-color: #135ee4;
+}
+
+/* Ticket
+	@mixin =================================== */
+.live-ticket h2 span {
+  color: #135ee4;
+}
+
+.live-ticket h4 span {
+  color: #135ee4;
+}
+
+.live-ticket .tim-btn:hover {
+  background: #135ee4;
+  border-color: #135ee4;
+}
+
+.artist-details-two .band-name {
+  color: #135ee4;
+}
+
+/* Widgets
+	@mixin =================================== */
+.widget.widget-shop .widget-title-shop span {
+  color: #135ee4;
+}
+
+.widget .widget-title span {
+  color: #135ee4;
+}
+
+.widget ul li a:hover {
+  color: #135ee4;
+}
+
+/* Widget Newsletter */
+.widgit_newsletter .newsletter-form .tim-btn:hover {
+  background: #135ee4;
+}
+
+/* Popular Post */
+.widgets-popular-post li .content .entry-meta.cat a {
+  color: #135ee4;
+}
+
+.ui-slider-horizontal .ui-slider-range {
+  background-color: #135ee4;
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus,
+.ui-button:hover,
+.ui-button:focus {
+  background: #135ee4;
+}
+
+.ui-slider .ui-slider-handle {
+  background: #135ee4;
+}
+
+.fil-btn:hover {
+  background: #135ee4;
+  border-color: #135ee4;
+}
+
+/* Best Sales */
+.best-sales .sales-item:before {
+  background: rgba(19, 94, 228, 0.9);
+}
+
+.best-sales .sales-item .content:hover {
+  color: #135ee4;
+}
+
+/* Lesson
+   @mixin =================================== */
+.lesson-box .content h3 a:hover {
+  color: #135ee4;
+}
+
+/* Ultimate Tabs
+   @mixin =================================== */
+.music-tab > a span {
+  color: #135ee4;
+}
+
+.music-tab .content h3 a:hover {
+  color: #135ee4;
+}
+
+.music-tab .content .ratting li {
+  color: #135ee4;
+}
+
+.music-tab.music-tab-two .content h3 a:hover {
+  color: #135ee4;
+}
+
+.music-tab.music-tab-two .view-btn {
+  position: relative;
+  color: #444;
+  right: auto;
+}
+
+.music-tab.music-tab-two .view-btn:hover {
+  color: #135ee4;
+}
+
+/* Intro Video
+   @mixin =================================== */
+.video-btn:hover {
+  background: #135ee4;
+  border-color: #135ee4;
+}
+
+.watch-inner .tim-btn:hover {
+  background: #135ee4;
+  border-color: #135ee4;
+}
+
+.watch-inner .tim-btn.tim-btn-bg {
+  background: #135ee4;
+  border-color: #135ee4;
+}
+
+.intro-video .event-date{
+  color: #135ee4;
+}
+
+/* Blog
+   @mixin =================================== */
+.blog-post-grid .entry-date {
+  background: #135ee4;
+}
+
+.blog-post-grid .entry-content {
+  padding: 30px 25px;
+}
+
+.blog-post-grid .entry-content .entry-header .entry-title a:hover {
+  color: #135ee4;
+}
+
+.blog-post-grid .entry-content .read-btn:hover {
+  color: #135ee4;
+}
+
+.blog-post-grid .entry-meta a:hover {
+  color: #135ee4;
+}
+
+.blog-post-grid .post-type-icon {
+  background: #135ee4;
+}
+
+.blog-post-grid .entry-meta a.author {
+  color: #135ee4;
+}
+
+/* Blog List */
+.blog-post .tim-btn-bgt.read-more-btn:hover {
+  border-color: #135ee4;
+  background: #135ee4;
+}
+
+.entry-content-wrapper .entry-meta ul.meta li a:hover {
+  color: #135ee4;
+}
+
+.entry-content-wrapper .entry-meta ul.meta li .author a {
+  color: #135ee4;
+}
+
+.entry-content-wrapper .entry-header .entry-title a:hover {
+  color: #135ee4;
+}
+
+.entry-content-wrapper .blog-footer .tag a:hover {
+  background: #135ee4;
+}
+
+.post-on:before {
+  background: rgba(19, 94, 228, 0.9);
+}
+
+ul.shared-link li:hover:before {
+  background: #135ee4;
+  border-color: #135ee4;
+}
+
+.blog-count-details a i {
+  margin-right: 5px;
+  color: #135ee4;
+}
+
+.post-type-icon:before {
+  background: #135ee4;
+}
+
+/* Comment */
+ul.comment-list {
+  padding: 60px 40px;
+}
+
+ul.comment-list .comment-body .reply a:hover {
+  color: #135ee4;
+}
+
+.comment-form:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.comment-form p.comment-form-comment textarea:hover, .comment-form p.comment-form-comment textarea:focus {
+  border-color: #135ee4;
+}
+
+.comment-form p input:hover, .comment-form p input:focus {
+  border-color: #135ee4;
+}
+
+.comment-form .form-submit .submit:hover {
+  background: #135ee4;
+  color: #fff;
+  border-color: #135ee4;
+}
+
+ul.comment-list .comment-body .comment-author a {
+  color: #135ee4;
+}
+
+/* Post Navigation */
+.posts-navigation ul li:hover a, .posts-navigation ul li.active a {
+  color: #135ee4;
+}
+
+/* Woocommerce
+   @mixin =================================== */
+ul.products li.product .product-thumb .new {
+  background: #135ee4;
+}
+
+ul.products li.product .product-thumb:before {
+  background: rgba(19, 94, 228, 0.7);
+}
+
+ul.products li.product .woocommerce-loop-product__title:hover {
+  color: #135ee4;
+}
+
+ul.products li.product .price .woocommerce-Price-amount {
+  color: #135ee4;
+}
+
+ul.products li.product-two .product-thumb .product-details a:hover i {
+  color: #135ee4;
+}
+
+ul.products li.product-two .product-thumb span:before {
+  font-size: 14px;
+  color: #135ee4;
+}
+
+/* Product 3 Column */
+.site-main .columns-3 ul.products li.product {
+  width: 33.33%;
+  padding: 0 15px;
+  margin: 0 0 40px;
+}
+
+.site-main .columns-3 ul.tim-product-view--list li.product-two .product-details-content .add_to_cart_button:hover {
+  background: #135ee4;
+  border-color: #135ee4;
+  color: #fff;
+}
+
+.site-main .tim-cart-btn {
+  background: #135ee4;
+}
+
+.product_meta .posted_in a:hover {
+  color: #135ee4;
+}
+
+.product-share-link li a:hover {
+  background: #135ee4;
+}
+
+/* Shop Page */
+.single-product-details .star-rating span:before {
+  color: #135ee4;
+}
+
+/* Product Single */
+.product-tab-wrapper .product-tabs li a:hover, .product-tab-wrapper .product-tabs li a.active {
+  color: #135ee4;
+  border-color: #135ee4;
+}
+
+.product-tab-wrapper .tab-content .tab-pane {
+  padding: 0;
+}
+
+.review-list .review-comment .comment-content .star-rating span:before {
+  color: #135ee4;
+}
+
+.review-form .gp-btn:hover {
+  background: #135ee4;
+}
+
+/* Rating Star Widgets Style */
+.rating:hover .star,
+.rating.vote-cast .star {
+  color: #135ee4;
+}
+
+/* Product Size */
+.options__item span:hover, .options__item span.active {
+  background: #135ee4;
+  border-color: #135ee4;
+}
+
+.woocommerce .wc-proceed-to-checkout .gp-btn {
+  background: #135ee4;
+}
+
+.product-cart .tim-cart-btn {
+  background: #135ee4;
+}
+
+/* Footer
+   @mixin =================================== */
+/* Footer Latest Post */
+.footer-blog-inner .footer-blog .content h3 a:hover {
+  color: #135ee4;
+}
+
+.footer-blog-inner .footer-blog .content .meta:hover {
+  color: #135ee4;
+}
+
+/* Tags */
+.tagcloud a:hover {
+  background: #135ee4;
+}
+
+/* Widget Newsletter */
+.footer-newsletter #widget-newsletter .submit {
+  background: #135ee4;
+}
+
+.footer-newsletter #widget-newsletter .submit:hover {
+  background: #444;
+}
+
+/*  Instagram Widget */
+.instagram-feed a {
+  max-width: 120px;
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-right: 5px;
+}
+
+.instagram-feed a img {
+  max-width: 100%;
+}
+
+/* Footer Social Link */
+.footer-social-link {
+  height: 60px;
+}
+
+.footer-social-link li:before {
+  background: #135ee4;
+}
+
+.copyright-text p a {
+  color: #135ee4;
+}
