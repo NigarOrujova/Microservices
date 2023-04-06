@@ -31,7 +31,7 @@ namespace CodeAcademy.Web.Controllers
         {
             var ticket = await _catalogService.GetByTicketId(ticketId);
 
-            var basketItem = new BasketItemViewModel { TicketId = ticket.Id, TicketName = ticket.Name, Price = ticket.Price };
+            var basketItem = new BasketItemViewModel { TicketId = ticket.Id, TicketName = ticket.Name, Price = ticket.Price, Quantity = 1 };
 
             await _basketService.AddBasketItem(basketItem);
 
@@ -63,5 +63,22 @@ namespace CodeAcademy.Web.Controllers
             await _basketService.CancelApplyDiscount();
             return RedirectToAction(nameof(Index));
         }
+        //[HttpPost]
+        //public async Task<IActionResult> QuantityUpdate(QtyData qtyData)
+        //{
+        //    var product = await _catalogService.GetByTicketId(qtyData.productId);
+        //    var basketItem = new BasketItemViewModel
+        //    {
+        //        ProductId = product.Id,
+        //        ProductName = product.Name,
+        //        Price = product.Price,
+        //        Quantity = qtyData.qty,
+        //        Picture = product.Picture,
+        //        StockPictureUrl = product.StockPictureUrl
+        //    };
+
+        //    await _basketService.AddBasketItem(basketItem);
+        //    return Json(qtyData);
+        //}
     }
 }

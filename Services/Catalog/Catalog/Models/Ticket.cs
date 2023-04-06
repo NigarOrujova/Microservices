@@ -6,6 +6,7 @@ public class Ticket {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
     public string Id { get; set; } = null!;
+    public string? Name { get; set; }
     public string? Description { get; set; }
 
     [BsonRepresentation(BsonType.Decimal128)]
@@ -17,7 +18,7 @@ public class Ticket {
     public DateTime CreatedDate { get; set; }
 
 
-
+    public Feature? Feature { get; set; }
 
 
     /* Navigation Properties */

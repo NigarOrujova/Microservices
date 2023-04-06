@@ -1,14 +1,7 @@
-﻿using CodeAcademy.Web.Services.Interfaces;
-using CodeAcademy.Shared.Results;
+﻿using CodeAcademy.Shared.Results;
 using CodeAcademy.Web.Helpers;
-using CodeAcademy.Web.Models;
 using CodeAcademy.Web.Models.Catalogs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
+using CodeAcademy.Web.Services.Interfaces;
 
 namespace CodeAcademy.Web.Services
 {
@@ -47,7 +40,7 @@ namespace CodeAcademy.Web.Services
         }
         public async Task<List<ConcertViewModel>> GetAllConcertAsync()
         {
-            var response = await _client.GetAsync("http://localhost:5014/api/Concerts");
+            var response = await _client.GetAsync("Concerts");
 
             if (!response.IsSuccessStatusCode)
             {

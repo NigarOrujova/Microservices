@@ -38,10 +38,10 @@ namespace CodeAcademy.Web.Controllers
         {
             var concerts = await _catalogService.GetAllConcertAsync();
             ViewBag.concertList = new SelectList(concerts, "Id", "Artist");
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return View();
+            //}
             ticketCreateInput.UserId = _sharedIdentityService.GetUserId;
 
             await _catalogService.CreateTicketAsync(ticketCreateInput);
@@ -80,10 +80,7 @@ namespace CodeAcademy.Web.Controllers
         {
             var concerts = await _catalogService.GetAllConcertAsync();
             ViewBag.concertList = new SelectList(concerts, "Id", "Artist", ticketUpdateInput.Id);
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
+            
             await _catalogService.UpdateTicketAsync(ticketUpdateInput);
 
             return RedirectToAction(nameof(Index));

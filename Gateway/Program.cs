@@ -3,6 +3,8 @@ using Ocelot.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Configuration.AddJsonFile($"configuration.{builder.Environment.EnvironmentName.ToString().ToLower()}.json");
+
 builder.Services.AddAuthentication().AddJwtBearer("GatewayAuthenticationScheme", options =>
 {
     options.Authority = builder.Configuration["IdentityServerURL"];
@@ -16,11 +18,4 @@ var app = builder.Build();
 
 await app.UseOcelot();
 
-app.MapGet("/", () => "Hello World!");
-
 app.Run();
-Host.CreateDefaultBuilder(args).ConfigureAppConfiguration((hostingContext, config) =>
-{
-    config.AddJsonFile($"configuration.{hostingContext.HostingEnvironment.EnvironmentName.ToLower
-        ()}.json").AddEnvironmentVariables();
-});
